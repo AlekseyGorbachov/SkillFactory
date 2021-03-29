@@ -140,6 +140,10 @@ def guesser(num_min, num_max, numX):
 ####################################
 
 name = input('Computer: Привет! Как тебя зовут?\n')
+line_game = (input(f'Computer: {name}, если хотите сыграть со мной - нажмите 1, '
+                   f'если хотите узнать как быстро я угадываю - нажмите 2\n'))
+
+
 num_min = (input(f'Computer: {name}, введите с какого числа будем угадывать?\n'))
 num_min = is_true_int(num_min)  # Проверка на корректность ввода данных
 num_max = (input(f'Computer: {name}, введите до какого числа будем угадывать?\n'))
