@@ -136,14 +136,33 @@ def guesser(num_min, num_max, numX):
 
 
 ####################################
-#def score_game():
+"""Функция score_game() высчитывает среднее значение попыток угадать за 1000 циклов"""
+def score_game(): # не работает
+    sum_try = 0     # сумма попыток
+    for i in range(1000):
+        num_min = 1
+        num_max = 100
+        men_comp = randint(1, 100)
+        while True:   # цикл угадывания
+            sum_try += 1
+            x = (num_min + num_max) // 2
 
-#xxxx = score_game()
-xxxx = 5
+            if men_comp > x:
+                num_min = x
+                continue
+            elif men_comp < x:
+                num_max = x
+                continue
+            elif men_comp == x:
+                break
+    return sum_try//1000
+
+
+average = 7 # среднее значение попыток
 
 name = input('Computer: Привет! Как Вас зовут?\n')
-line_game = (input(f'Computer: {name}, числа от 1 до 100 я, в среднем, я угадываю за {xxxx} попыток,'
-                   f' хотите проверить - давайте сыграем!!!\n'))
+print(f'Computer: {name}, числа от 1 до 100 я, в среднем,  угадываю за {average} попыток,'
+                   f' хотите проверить - давайте сыграем!!!\n')
 
 
 num_min = (input(f'Computer: {name}, введите с какого числа будем угадывать?\n'))
